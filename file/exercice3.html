@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: antiquewhite;">
+    <form action=""name="formulaire" style="display: flex;
+    flex-direction: column;align-items: center;">
+        <label for="date">Entrer votre date</label>
+        <input type="date" name="date" id="date" style="width: 600px;height: 30px;">
+        <input type="button" onclick="validationdat()" value="Envoyer" style="background-color: blue;color: aliceblue;padding: 10px;">
+        <p id="affiche"></p>
+        <p id="diff"></p>
+    </form>
+    <script>
+        function validationdat(){
+            const saisie=document.formulaire.date.value;
+            let dat=new Date(saisie);
+            const annee=dat.getFullYear();
+            const jour=dat.getDate();
+            const mois=dat.getMonth()+1;
+            if(saisie!==""){
+            document.getElementById("affiche").innerText="L'année entrer est "+annee+
+            "le mois est "+mois+"et le jour est "+jour;
+        }else{
+            document.getElementById("affiche").innerText="Entrer une date";
+        }
+            diffdate(dat);
+        }
+
+        function diffdate(datesaisi){
+            let datact= new Date();
+          let diff=datact-datesaisi;
+          let diffDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+          document.getElementById("diff").innerText = "Différence en jours : " + diffDays;
+        }
+    </script>
+    
+</body>
+</html>

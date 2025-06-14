@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(228, 245, 247);
+        }
+        form[name="form"]{
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        form[name="form"]>input[type="number"]{
+            width: 50%;
+            
+        }
+        form[name="form"]>input[type="button"]{
+            width: 10%;
+            background-color: aqua;
+            border: none;
+            border-radius: 10px;
+            color: blueviolet;
+        }
+        input[type="button"]{
+            padding: 15px;
+            background-color: blueviolet;
+            border: none;
+            border-radius: 8px;
+            color: aliceblue;
+        }
+        input[type="number"]{
+            width: 50%;
+            height: 35px;
+        }
+    </style>
+</head>
+<body>
+   <p id="tableinit"></p>
+
+   <form action=""name="form">
+    
+    <input type="number" name="number" id="number" placeholder="Entrer un nombre">
+    <input type="button" onclick="ajou()" value="Ajouter">
+    <p id="newtable"></p>
+   </form>
+
+   <form action=""name="form2">
+    <input type="number" name="sup"placeholder="indix de suppression">
+    <input type="button" onclick="supprime()" value="Ajouter">
+   </form>
+    <p id="newtable1"></p>
+    <p> 
+        <input type="button" onclick="trie()" value="Trier">
+    </p>
+   <p id="order"></p>
+    <script>
+        const numbers = new Array("2","4","5","3","1");
+        document.getElementById("tableinit").innerText= "La table initial est "+numbers;
+
+        function ajou(){
+            const valsaisir=document.form.number.value;
+            if(valsaisir!==""){
+            numbers.push(valsaisir);
+            document.getElementById("newtable").innerText= "La nouvelle table est "+numbers;
+            }
+            
+        }
+
+        function supprime(){
+            const valsaisir=document.form2.sup.value;
+            if (valsaisir!==""){
+              const index=  numbers.indexOf(valsaisir);
+              if(index!==-1){
+                numbers.splice(index,1);
+                 document.getElementById("newtable1").innerText= "La nouvelle table est "+numbers;
+              }
+             
+            }
+        }
+
+        function trie(){
+            numbers.sort((a, b) => a - b);
+            
+            document.getElementById("order").innerText=numbers;
+        }
+        
+    </script>
+</body>
+</html>

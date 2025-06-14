@@ -1,0 +1,68 @@
+.animation{
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background-color: rgb(252, 253, 253);
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.animation::before{
+    content: "";
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    background: conic-gradient(blue 20deg,transparent 100deg);
+    animation: rotation 4s linear infinite;
+    
+}
+
+@keyframes rotation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.animation::after{
+    content: "";
+    width: 97%;
+    height: 97%;
+    background-color: rgb(22, 21, 21);
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    border-radius: 20px;
+}
+
+/* cycle */
+.contentCycle{
+    margin-left: 50%;
+    background-color: aquamarine;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fist{
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient( yellow 4deg,rgb(235, 233, 233) 0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fist::before{
+    content: "";
+    width: 150px; 
+    height: 150px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(252, 254, 255);
+
+}
+.fist>span{
+    position: relative;
+}

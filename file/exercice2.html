@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="mformulaire">
+        <label for="nomber">Entrer un nombre</label>
+        <input type="number" name="nomber" id="nomber">
+        <input type="button" onclick="traitement()" value="Envoyer">
+    </form>
+    <p id="calcul" ></p>
+    <p id="aron" ></p>
+
+    <script>
+        function traitement(){
+            const nbr=document.mformulaire.nomber.value;
+            let cal=Math.sqrt(nbr);
+            document.getElementById('calcul').innerText="La racine carrer de votre nombre est: "+cal;
+
+
+            // arrondie
+            let ron=Math.round(cal);
+            document.getElementById("aron").innerText="La valeur arrondie est: "+ron;
+        }
+    </script>
+
+    <form action=""name="dexform">
+        <input type="button" onclick="Aleatoire()" value="Génération ">
+        <p id="result"></p>
+    </form>
+    <script>
+          function Aleatoire() {
+            let randomNumber = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("result").innerText = "Nombre aléatoire : " + randomNumber;
+        }
+    </script>
+</body>
+</html>

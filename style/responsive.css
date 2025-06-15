@@ -168,8 +168,24 @@
     }
     #projet>div>div>p>span:nth-child(1){
         display: flex;
-        white-space: nowrap;
-      
-       
+        text-align: center;
+    }
+    #contact>p{
+        text-align: center;
+        padding: 30px;
+    }
+    header>div:nth-child(1)>p:nth-child(1){
+        text-align: center;   
+    }
+    footer>div{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        margin-left: 0px;
+        font-size: 0.775rem;
+        margin-right: 0px;
+    }
+    footer>div>div{
+        text-align: center;
     }
 }

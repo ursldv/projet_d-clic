@@ -152,3 +152,24 @@
     }
 
 }
+@media (max-width:455px) {
+    header{
+        padding: 12%;
+    }
+    #projet{
+        padding: 10%;
+    }
+    #projet>div>div>p>span{
+        display: flex;
+        padding: 20px;
+        justify-content: center;
+        align-items:none;
+       
+    }
+    #projet>div>div>p>span:nth-child(1){
+        display: flex;
+        white-space: nowrap;
+      
+       
+    }
+}

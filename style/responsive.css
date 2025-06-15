@@ -104,6 +104,17 @@
     form{
         width: 80%;
     }
+    #apropos>div>div:nth-child(1){
+        padding: 5%;
+    }
+    #apropos>div{
+        
+    }
+    
+    #competance>div>div:nth-child(2)>div{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }
 @media (max-width:668px) {
     .nomprenom>div>input{
@@ -121,4 +132,23 @@
         margin-left: 10px;
         margin-right: 10px;
     }
+    #projet>div>div{
+        margin-left: 0px;
+    }
+}
+@media (max-width:900px) {
+    
+    #projet>div>div{
+        margin-left: 0px;
+     
+    }
+    #projet>div{
+        gap: 20px 50px;
+    }
+    #apropos>div{
+        display: flex;
+        gap: 0px;
+        justify-content: space-around;
+    }
+
 }
